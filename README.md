@@ -1,6 +1,6 @@
 # Virtual Art Sessions
 
-This repository mirrors the active [Virtual Art Sessions](http://g.co/VirtualArtSessions) site (code name Project Udon) and has been opened up with the Apache License 2.0 so that anyone interested can dig around and see how it works. This is meant to accompany the explanations in the case study.
+This repository mirrors the active [Virtual Art Sessions](http://g.co/VirtualArtSessions) site (code name Project Udon) and has been opened up with the Apache License 2.0 so that anyone interested can dig around and see how it works. This is meant to accompany the explanations in the [case study](https://developers.google.com/web/showcase/case-study/art-sessions).
 
 
 ## Points of interest
