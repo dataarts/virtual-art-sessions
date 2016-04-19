@@ -1,0 +1,17 @@
+.ratio {
+    height: 0;
+    position: relative;
+}
+
+.ratio__content,
+.ratio iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.ratio--16-9 {
+    padding-bottom: 56.25%;
+}

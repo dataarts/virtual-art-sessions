@@ -1,0 +1,33 @@
+.modal {
+  @include rem(padding, 20px);
+  -webkit-overflow-scrolling: touch;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+.modal__close {
+  @include rem(right, 20px);
+  @include rem(top, 20px);
+  position: fixed;
+  z-index: 9999;
+
+  img {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}

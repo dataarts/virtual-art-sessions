@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block page_class %}unsupported{% endblock %}
+{% block main %}
+  <div class="home__header" role="banner">
+    <div class="home__header__heading">
+      <a href="{% url 'home' %}">Virtual Art Sessions</a>
+    </div>
+    <div class="home__header__subheading">An experiment in virtual reality painting with <span class="u-no-wrap">Tilt Brush.</span></div>
+  </div>
+  <div class="unsupported__message" role="main">
+    <p>Sorry, this experience requires WebGL. Please try again using <a href="https://www.google.com/chrome/browser/" target="_blank">Google Chrome</a>.</p>
+    <p><a href="/#/tech" data-ga-category="overlay" data-ga-action="technology" class="tech-button">About the project and technology</a></p>
+  </div>
+  <div class="home__footer">
+    {% include "includes/footer.html" %}
+  </div>
+{% endblock %}
+
+{% block js_init %}
+  <script>
+    vart.init('unsupported');
+  </script>
+{% endblock %}

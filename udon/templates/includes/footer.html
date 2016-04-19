@@ -1,0 +1,22 @@
+{% load staticfiles %}
+{% include "includes/tech-modal.html" %}
+<div class="footer" role="contentinfo">
+  <div class="footer__logos">
+    <ul>
+      <li><a href="http://chromeexperiments.com"><img src="{% static 'img/chrome-experiment.png' %}" alt="This is a Chrome Experiment"></a></li>
+      <li><img src="{% static 'img/google-logo.png' %}" alt="Made with some friends from Google"></li>
+    </ul>
+  </div>
+  <div class="footer__aside">
+    <div class="footer__social">
+      {% with ga_label="footer" %}
+        {% include "includes/social.html" with message=globals.meta.share_message %}
+      {% endwith %}
+    </div>
+    <div class="footer__links">
+      <ul>
+        <li><a href="https://www.google.com/policies/privacy/">Privacy</a> &amp; <a href="https://www.google.com/policies/terms/">terms</a>
+      </ul>
+    </div>
+  </div>
+</div>

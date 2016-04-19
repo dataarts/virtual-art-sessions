@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<div class="modal tech-modal" data-modal="tech">
+  <div class="modal__close">
+    <button class="icon-button" data-modal-close>
+      {% include "img/icons/close.svg" %}
+    </button>
+  </div>
+  <div class="container">
+    <span class="tech-modal__heading">Virtual Art Sessions</span>
+    <span class="tech-modal__separator">-</span>
+    <span class="tech-modal__sub-heading">Technology</span>
+
+    <div class="tech-modal__video ratio ratio--16-9">
+      <div data-video-id="a2wsolTDNdM"></div>
+    </div>
+
+    <div class="tech-modal__summary">
+      <p><strong>Virtual Art Sessions</strong> is an experiment in virtual reality painting with <a href="http://www.tiltbrush.com/" target="_blank">Tilt Brush</a>. The project partnered with six world-renowned artists bringing them a new way to paint, draw and sculpt. We recorded their sessions and made it accessible online, letting you observe the artists as they develop their virtual reality creations from any angle.</p>
+      <p>The project renders high volumes of data right in the browser. This includes point cloud data of the artist’s physical form, 3D geometry data of the artwork, and position data of the VR controllers. Using open source web technologies, we transformed that data into something that can be experienced by anyone using the web. No apps or plug-ins needed.</p>
+      <p>Virtual Art Sessions is open source. It's a bit of a mess, so proceed at your own risk, but if you poke around enough, you’ll see how we created the entire project.</p>
+      <p><a href="https://github.com/dataarts/virtual-art-sessions" target="_blank" class="tech-modal__code-button">Get the code</a></p>
+    </div>
+
+    <ul class="tech-modal__list">
+      <li>
+        <h5><a href="http://www.tiltbrush.com/" target="_blank">Tilt Brush</a></h5>
+        <p>An application that lets you use virtual reality to paint the 3D space around you, so you can step around, in and through your drawings as you go. All content made in the Virtual Art Sessions was created using Tilt Brush.</p>
+        <p><img src="{% static 'img/tilt-brush-logo.png' %}" alt="Tilt Brush"></p>
+      </li>
+      <li>
+        <h5><a href="http://www.depthkit.tv/rgbdtoolkit" target="_blank">RGBDToolkit</a></h5>
+        <p>An open source tool that captures 3D depth information using infrared depth sensors and standard video cameras. Using this, we recorded artist movement and transformed that data into 3D point clouds.</p>
+      </li>
+      <li>
+        <h5><a href="https://nodejs.org/en/" target="_blank">NodeJS</a></h5>
+        <p>An open source JavaScript runtime built on Chrome's V8 JavaScript engine. With this, we built a server that sent remote commands to Tilt Brush, recorded position data from the VR system and processed this data into JSON files.</p>
+      </li>
+      <li>
+        <h5><a href="http://threejs.org/" target="_blank">Three.js</a></h5>
+        <p>An open source JavaScript library that uses WebGL to create fast 2D and 3D graphics. We used this to render the artist and artwork right in your browser.</p>
+      </li>
+      <li>
+        <h5><a href="http://www.html5rocks.com/en/tutorials/webgl/webgl_fundamentals/" target="_blank">WebGL</a></h5>
+        <p>A Javascript API that allows access to the user’s GPU for smooth graphics in the browser without any use of plug-ins.</p>
+      </li>
+      <li>
+        <h5><a href="http://www.webmproject.org" target="_blank">WebM video</a></h5>
+        <p>An open source, high-quality video format that uses efficient bandwidth and small file sizes. In this project, webM video files store depth, color and position data of the artists’ physical form and is later decoded by a WebGL shader.</p>
+      </li>
+      <li>
+        <h5><a href="https://cloud.google.com/appengine/docs" target="_blank">App Engine</a></h5>
+        <p>A platform that lets web developers build and deploy instantly scalable web applications on Google’s infrastructure.</p>
+      </li>
+      <li>
+        <h5><a href="https://cloud.google.com/storage/docs/overview" target="_blank">Cloud Storage</a></h5>
+        <p>A Google service that allows for cost effective and scalable online file serving. Video files used to inform color, depth, and position data that create the artist representation are stored here.</p>
+      </li>
+    </ul>
+  </div>
+</div>

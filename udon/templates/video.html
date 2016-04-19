@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+
+{% block main %}
+	<video src="{% url 'serve_file' blob_key_or_info=blob_key_or_info %}" autoplay controls></video>
+{% endblock %}

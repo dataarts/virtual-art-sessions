@@ -1,0 +1,26 @@
+.unsupported__message {
+  @include rem(font-size, 20px);
+  @include rem(padding, 0 10px);
+  display: flex;
+  font-weight: 300;
+  flex-direction: column;
+  flex-grow: 2;
+  justify-content: center;
+  text-align: center;
+
+  p {
+    @include rem(margin-bottom, 20px)
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.unsupported {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}

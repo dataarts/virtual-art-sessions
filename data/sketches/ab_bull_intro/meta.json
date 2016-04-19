@@ -1,0 +1,14 @@
+{
+  "postprocessing": {
+    "ssao": true,
+    "glow": false
+  },
+  "video": {
+    "source": "videos/ab_bull/intro"
+  },  
+  "artistSettings": {
+    "blackCutOff": 0.0,
+    "pointSize": 4.8,
+    "renderStyle": "points"
+	}
+}

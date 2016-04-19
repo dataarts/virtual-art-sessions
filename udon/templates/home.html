@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block page_class %}home{% endblock %}
+{% block main %}
+<div class="home__wrapper">
+  <div class="home__header" role="banner">
+    <div class="home__header__heading">
+      <a href="{% url 'home' %}">Virtual Art Sessions</a>
+    </div>
+    <div class="home__header__subheading">An experiment in virtual reality painting with <span class="u-no-wrap">Tilt Brush.</span></div>
+  </div>
+  <div class="home__prop">
+    <div class="home__info">
+      <span class="home__info__subheading">We partnered with six artists, bringing them a new way to paint, draw and sculpt. The following interactive sessions show their first explorations in a 3D virtual environment.</span>
+      <p class="home__chrome-prompt">
+        This experience works best on <a href="https://www.google.com/chrome/browser/">Google Chrome</a>
+      </p>
+      <div class="home__cta">
+        <button class="js-start-cta" data-ga-category="home" data-ga-action="start">Start</button>
+      </div>
+    </div>
+    <div class="home__artists" role="navigation">
+      <div class="home__artists-box">
+        <div class="home__artists__heading">Select an artist to explore a session</div>
+        <ul class="grid grid--narrow">
+          {% for artist in artists %}
+            <li class="home__artist grid__item one-sixth sm--one-third md--one-third lg--one-third">
+              <a href="{% url 'session' artist_slug=artist.slug %}">
+                <img src="/static/img/artists/{{ artist.slug }}/photo.jpg" alt="{{ artist.name }}">
+                <div class="home__artist__name">{{ artist.name }}</div>
+                <div class="home__artist__title">{{ artist.title }}</div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="home__links">
+        <ul>
+          <li><a href="/#/about" data-modal-trigger="tech" data-ga-category="overlay" data-ga-action="technology">About the project &amp; technology</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="viewer-container js-viewer-container" role="main">
+    <div class="viewer js-viewer"></div>
+  </div>
+  <div class="home__footer">
+    {% include "includes/footer.html" %}
+  </div>
+</div>
+{% endblock %}
+
+{% block js_init %}
+  <script>
+    vart.init('home');
+  </script>
+{% endblock %}

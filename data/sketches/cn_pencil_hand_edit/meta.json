@@ -1,0 +1,14 @@
+{
+  "postprocessing": {
+    "ssao": true,
+    "glow": false
+  },
+  "video": {
+    "source": "videos/cn_pencil_hand/edit_v1b"
+  },  
+  "artistSettings": {
+    "blackCutOff": 0.0,
+    "pointSize": 4.8,
+    "renderStyle": "points"
+	}
+}

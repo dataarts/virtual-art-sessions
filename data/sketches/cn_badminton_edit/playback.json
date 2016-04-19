@@ -1,0 +1,35 @@
+
+{
+  "cameras": [
+    {
+      "fovx": 365.202301025,
+      "fovy": 365.202301025,
+      "ppx": 254.881698608,
+      "ppy": 212.481292725,
+      "width": 512.000000000,
+      "height": 424.000000000,
+        "minDepth": 1524.098388672,
+        "maxDepth": 5375.3828125
+
+    },
+    {
+      "fovx": 364.552368164,
+      "fovy": 364.552368164,
+      "ppx": 259.363708496,
+      "ppy": 205.818801880,
+      "width": 512.000000000,
+      "height": 424.000000000,
+        "minDepth": 1666.373901367,
+        "maxDepth": 4717.357421875
+
+    }
+  ],
+  "renderSettings": {
+    "blackCutOff": 0.0,
+    "particleSize": 4.79751720213208,
+    "enableViewerDistScaling": 1,
+    "enableKinectDistScaling": 1
+  }
+
+
+}

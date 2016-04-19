@@ -1,0 +1,8 @@
+{
+  "postprocessing": {
+    "ssao": true
+  },
+  "video": {
+    "source": "videos/sny_ren_man/edit_v1b"
+  }
+}

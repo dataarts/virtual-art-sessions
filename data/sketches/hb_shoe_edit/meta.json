@@ -1,0 +1,14 @@
+{
+  "postprocessing": {
+    "ssao": false,
+    "glow": false
+  },
+  "video": {
+    "source": "videos/hb_shoe/edit_v1b"
+  },
+  "artistSettings": {
+    "blackCutOff": 0.00000,
+    "pointSize": 4.8,
+    "renderStyle": "points"
+	}
+}

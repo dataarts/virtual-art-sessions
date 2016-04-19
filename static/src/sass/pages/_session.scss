@@ -1,0 +1,263 @@
+.session {
+  user-select: none;
+}
+
+.session__explore-more {
+  @include rem(margin-bottom, 20px);
+  animation-duration: .5s;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-timing-function: $ease-in-out-cubic;
+  display: none;
+  text-align: center;
+
+  .is-finished & {
+    display: block;
+  }
+}
+
+.session__navigation {
+  @include rem(min-width, $site-min-width);
+  @include rem(padding, 14px 14px 0 14px);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 50;
+}
+
+.session__meta {
+  @include rem(margin-bottom, 20px);
+  align-items: flex-end;
+  display: flex;
+  position: relative;
+  width: 100%;
+
+  h5 {
+    margin-bottom: 0;
+  }
+}
+
+.session__by {
+  @include rem(padding-right, 10px);
+  @include rem(top, -3px);
+  flex-grow: 1;
+  position: relative;
+}
+
+.session__speed {
+  @include rem(min-width, 156px);
+  display: none;
+  text-align: right;
+}
+
+.session__controls {
+  @include rem(height, 20px);
+  @include rem(margin-bottom, 20px);
+  display: flex;
+}
+
+.session__buttons {
+  @include rem(top, -2px);
+
+  button {
+    @include rem(margin-right, 10px);
+  }
+}
+
+.session__buttons-right {
+  @include rem(top, -3px);
+
+  button {
+    @include rem(margin-left, 10px);
+  }
+}
+
+%session-button {
+  @include rem(padding, 3px 6px);
+  appearance: none;
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.session__timestamp {
+  @include rem(margin-right, 20px);
+  @include rem(top, 3px);
+  position: relative;
+}
+
+.speed__1x,
+.speed__2x,
+.speed__4x,
+.speed__8x {
+  @extend %session-button;
+  color: lighten($mine-shaft, 20);
+  display: inline;
+
+  &.is-active {
+    color: $white;
+  }
+}
+
+// 8x is only shown on desktop.
+.speed__8x {
+  display: none;
+
+  @include respond-up(lg) {
+    display: inline-block;
+  };
+}
+
+.session__pause,
+.session__play,
+.session__replay,
+.session__fullscreen,
+.session__fullscreen-exit {
+  @extend %session-button;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    @include rem(height, 24px);
+    @include rem(width, 24px);
+  }
+}
+
+.session__pause,
+.session__replay,
+.session__fullscreen,
+.session__fullscreen-exit {
+  display: none;
+}
+
+.session__play {
+  .is-playing &,
+  .is-finished & {
+    display: none;
+  }
+
+  .is-paused {
+    display: block;
+  }
+}
+
+.session__pause {
+  .is-playing & {
+    display: block;
+  }
+
+  .is-paused &,
+  .is-finished & {
+    display: none;
+  }
+}
+
+.session__replay {
+  .is-playing &,
+  .is-paused & {
+    display: none;
+  }
+
+  .is-finished & {
+    display: block;
+  }
+}
+
+.session__fullscreen {
+  display: none;
+
+  .fullscreen & {
+    display: flex;
+  }
+
+  :fullscreen & {
+    display: none;
+  }
+}
+
+.session__fullscreen-exit {
+  :fullscreen & {
+    display: flex;
+  }
+}
+
+.session__progress {
+  @include rem(margin-top, 3px);
+  flex-grow: 1;
+}
+
+.session__prev,
+.session__next {
+  @include rem(font-size, 14px);
+  @include rem(line-height, 16px);
+  align-items: center;
+  color: $gray;
+  display: inline-flex;
+  position: absolute;
+  text-decoration: none;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 99;
+
+  :fullscreen & {
+    display: none;
+  }
+
+  @include respond-up(md) {
+    @include rem(font-size, 16px);
+    @include rem(line-height, 18px);
+  }
+
+  span {
+    @include rem(width, 60px);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  svg {
+    $size: 24px;
+    $size-2: 30px;
+    @include rem(height, $size);
+    @include rem(width, $size);
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    @include respond-up(md) {
+      @include rem(height, $size-2);
+      @include rem(width, $size-2);
+    }
+  }
+}
+
+.session__prev {
+  @include rem(left, 10px);
+
+  @include respond-up(md) {
+    @include rem(left, 20px);
+  }
+}
+
+.session__next {
+  @include rem(right, 10px);
+  text-align: right;
+
+  @include respond-up(md) {
+    @include rem(right, 20px);
+  }
+}
+
+.canvas-window-sm {
+  .is-finished & {
+    display: none;
+  }
+}
+
+.canvas-border {
+  .is-finished & {
+    display: none;
+  }
+}

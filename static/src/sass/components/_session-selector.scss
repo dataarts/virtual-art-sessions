@@ -1,0 +1,98 @@
+$thumb-height: 44px;
+
+.session-selector {
+  $padding: 10px;
+  @include rem(margin-left, -14px);
+  @include rem(margin-right, -14px);
+  background-color: rgba(0, 0, 0, .6);
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+
+  :fullscreen & {
+    display: none;
+  }
+
+  /**
+   * 1. Allow a scrollbar sized gap between the fader and the container so that
+   *    the fading element doesn't overlap the horizontal scrollbar if present.
+   */
+  &:after {
+    @include rem(width, $padding);
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, .6));
+    bottom: 8px; /* [1] */
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.session-selector__scroller {
+  @include rem(padding, 10px 14px);
+  height: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include rem(height, 6px);
+    background-color: $burning-orange;
+    border-radius: 6px;
+  }
+}
+
+.session-selector__item {
+  $h-ratio: 17;
+  $v-ratio: 10;
+  @include rem(margin, 0 4px);
+
+  border: 2px solid $mine-shaft;
+  display: inline-block;
+  position: relative;
+  transition: border-color .25s $ease-in-out-cubic;
+  vertical-align: top;
+  width: $thumb-height * ($h-ratio/$v-ratio);
+
+  &:before {
+    content: "";
+    display: block;
+    height: 0;
+    padding-bottom: ($v-ratio/$h-ratio)*100%;
+    position: relative;
+  }
+
+  &.is-active,
+  &:hover {
+    border-color: $white;
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.session-selector__item--highlighted {
+  border-color: $burning-orange;
+}

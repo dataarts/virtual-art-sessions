@@ -1,0 +1,17 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.message {
+  @include rem(max-width, 768px);
+  @include rem(padding, 15px);
+  margin: 0 auto;
+}

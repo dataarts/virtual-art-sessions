@@ -1,0 +1,6 @@
+{
+  "postprocessing": {
+    "ssao": false,
+    "glow": false
+  }
+}

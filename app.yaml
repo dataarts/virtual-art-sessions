@@ -1,0 +1,53 @@
+application: s~project-udon
+version: master
+runtime: python27
+api_version: 1
+threadsafe: true
+default_expiration: "601s"
+
+handlers:
+
+- url: /_ah/(mapreduce|queue|warmup|internalupload).*
+  script: udon.wsgi.application
+  login: admin
+  secure: always
+
+- url: /static/
+  static_dir: static/dist/
+  application_readable: true
+  secure: always
+
+- url: /data/
+  static_dir: data/
+  secure: always
+
+- url: /upload/
+  script: udon.wsgi.application
+  login: admin
+  secure: always
+
+- url: /.*
+  script: udon.wsgi.application
+  secure: always
+
+skip_files:
+    - manage.py
+    - README.md
+    - install_deps
+    - requirements.txt
+    - sitepackages/google_appengine*
+    - static/src*
+    - package.json
+    - bower.json
+    - node_modules
+    - bower_components
+    - gulp*
+    - scripts/*
+    - \.idea
+    - \.editorconfig
+    - \.eslintrc
+    - \.sass-lint.yml
+    - \.storage.*
+    - \.git
+    - (.*)\.pyc
+    - (.*).DS_Store

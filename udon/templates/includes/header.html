@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<div class="header" role="banner">
+  <div class="header__icon header__back">
+    <a href="{% url 'home' %}#/artists" class="icon-link">
+      {% include "img/icons/back.svg" %}
+    </a>
+  </div>
+  <div class="header__heading">
+    <a href="{% url 'home' %}#/artists">Virtual Art Sessions</a>
+  </div>
+  <div class="header__icon header__share">
+    <button class="header__share-button icon-button" aria-label="Share" data-ga-category="share" data-ga-action="modal-show" data-ga-label="viewer" data-modal-trigger="share">
+      {% include "img/icons/share.svg" %}
+    </button>
+  </div>
+  {% include "includes/share-modal.html" %}
+</div>

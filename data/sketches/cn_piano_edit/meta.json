@@ -1,0 +1,14 @@
+{
+  "postprocessing": {
+    "ssao": false,
+    "glow": false
+  },
+  "video": {
+    "source": "videos/cn_piano/edit_v1b"
+  },  
+  "artistSettings": {
+    "blackCutOff": 0.0,
+    "pointSize": 4.8,
+    "renderStyle": "points"
+	}
+}

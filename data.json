@@ -1,0 +1,249 @@
+{
+  "globals": {
+    "meta": {
+      "title": "Virtual Art Sessions",
+      "description": "Virtual Art Sessions is a Chrome Experiment using Tilt Brush. Explore six world-renowned, diverse artists paint in virtual reality from any angle. Created for Google Chrome.",
+      "share_message": "#VirtualArtSessions, a new @ChromeExp that lets you explore virtual reality paintings made w/Tilt Brush g.co/VirtualArtSessions"
+    }
+  },
+  "artists": [
+    {
+      "name": "Andrea Blasich",
+      "slug": "andrea-blasich",
+      "title": "Sculptor",
+      "share_title": "sculpt",
+      "bio": "Andrea Blasich is a traditional sculptor whose work has appeared in several animated films by Pixar, Disney, Dreamworks and more.",
+      "video_id": "HRYwGrUMZcU",
+      "page": "http://www.andreablasichsculpture.com/",
+      "sessions": [
+        {
+          "name": "Bull",
+          "sketch": "ab_bull_edit",
+          "slug": "bull",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Flamingo",
+          "sketch": "ab_flamingo_edit",
+          "slug": "flamingo",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Samurai",
+          "sketch": "ab_samurai_edit",
+          "slug": "samurai",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Genie",
+          "sketch": "ab_genie_edit",
+          "slug": "figure",
+          "thumbnail": false,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "Christoph Niemann",
+      "slug": "christoph-niemann",
+      "title": "Illustrator",
+      "share_title": "draw",
+      "bio": "Christoph Niemann is an artist, illustrator and author of several children’s books. His work has appeared on the covers of The New Yorker, TIME, Wired and more.",
+      "video_id": "MH-8b4QFpHs",
+      "page": "http://www.christophniemann.com/",
+      "sessions": [
+        {
+          "name": "Chair Meal",
+          "sketch": "cn_chair_meal_edit",
+          "slug": "meal",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Piano",
+          "sketch": "cn_piano_edit",
+          "slug": "piano",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Badminton",
+          "sketch": "cn_badminton_edit",
+          "slug": "badminton",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Pencil Hand",
+          "sketch": "cn_pencil_hand_edit",
+          "slug": "pencil",
+          "thumbnail": false,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "Harald Belker",
+      "slug": "harald-belker",
+      "title": "Concept Designer",
+      "share_title": "draw",
+      "bio": "Harald Belker is an automotive concept designer, best known for his vehicle designs in films such as Batman & Robin and Minority Report.",
+      "video_id": "J5EFOBh9Hw8",
+      "page": "http://www.haraldbelker.com/",
+      "sessions": [
+        {
+          "name": "Shark Ship",
+          "sketch": "hb_shark_ship_edit",
+          "slug": "spacecraft",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Red Car",
+          "sketch": "hb_red_car_edit",
+          "slug": "automobile",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Shoe",
+          "sketch": "hb_shoe_edit",
+          "slug": "shoe",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Superhero Car",
+          "sketch": "hb_superhero_car_edit",
+          "slug": "superhero-car",
+          "thumbnail": false,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "Katie Rodgers",
+      "slug": "katie-rodgers",
+      "title": "Fashion Artist",
+      "share_title": "paint",
+      "bio": "Katie Rodgers is a fashion illustrator. Her watercolor based designs have been commissioned by the likes of Cartier, Valentino, Christian Louboutin and more.",
+      "video_id": "IdOT5IjIqfw",
+      "page": "http://paperfashion.net/",
+      "sessions": [
+        {
+          "name": "Dress Blue",
+          "sketch": "kr_dressform_blue_edit",
+          "slug": "blue-dress",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Starcatcher",
+          "sketch": "kr_starcatcher_edit",
+          "slug": "starcatcher",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Ballet",
+          "sketch": "kr_ballet_edit",
+          "slug": "ballet",
+          "thumbnail": false,
+          "enabled": true
+        },
+
+        {
+          "name": "Flow",
+          "sketch": "kr_flow_edit",
+          "slug": "flow",
+          "thumbnail": false,
+          "enabled": true
+        }
+
+      ]
+    },
+    {
+      "name": "Seung Yul Oh",
+      "slug": "seung-yul-oh",
+      "title": "Installation Artist",
+      "share_title": "sculpt",
+      "bio": "Seung Yul Oh is a contemporary artist, known for his playful, interactive installations. He works with a variety of materials including inflatables, fiberglass, mops and more.",
+      "video_id": "WQugTsMQAzw",
+      "page": "http://www.ohseungyul.com/",
+      "sessions": [
+        {
+          "name": "Double Form",
+          "sketch": "syo_double_form_edit",
+          "slug": "double-form",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Tangle",
+          "sketch": "syo_tangle_edit",
+          "slug": "tangle",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Yellow Shards",
+          "sketch": "syo_yellow_shards_edit",
+          "slug": "yellow-shards",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Red Explosion",
+          "sketch": "syo_red_explosion_edit",
+          "slug": "red-explosion",
+          "thumbnail": false,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "Yok & Sheryo",
+      "slug": "yok-and-sheryo",
+      "title": "Street Artists",
+      "share_title": "make street art",
+      "bio": "Yok & Sheryo are a team of street artists, known for their colorful murals. Their work varies from a block-long billboard in Times Square to volunteer art teaching for Burmese refugees.",
+      "video_id": "9--0Wme88sQ",
+      "page": "http://www.yokandsheryo.com/",
+      "sessions": [
+        {
+          "name": "Yoks Brain",
+          "sketch": "sny_yoks_brain_edit",
+          "slug": "yoks-brain",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Wall Rat Sheryo",
+          "sketch": "sny_wall_rat_sheryo_edit",
+          "slug": "wall-piece",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Alley Cat",
+          "sketch": "sny_alley_cat_edit",
+          "slug": "alley-cat",
+          "thumbnail": false,
+          "enabled": true
+        },
+        {
+          "name": "Motorbikes",
+          "sketch": "sny_motorbikes_edit",
+          "slug": "motorbikes",
+          "thumbnail": false,
+          "enabled": true
+        }
+
+
+      ]
+    }
+  ]
+}

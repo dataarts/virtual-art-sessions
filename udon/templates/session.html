@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+  {% include "includes/header.html" %}
+  <div class="session">
+    {% if previous %}
+      <a href="{% url 'session' artist_slug=previous.slug %}" class="session__prev">
+      {% include "img/icons/arrow-left.svg" with color="#888" %}
+        <span>Prev Artist</span>
+      </a>
+    {% endif %}
+    {% if next %}
+      <a href="{% url 'session' artist_slug=next.slug %}" class="session__next">
+        <span>Next Artist</span>
+        {% include "img/icons/arrow-right.svg" with color="#888" %}
+      </a>
+    {% endif %}
+    <div class="session__navigation">
+      <div class="session__explore-more">
+        <a href="{% url 'home' %}#/artists">Explore more sessions</a>
+      </div>
+      <div class="session__meta">
+        <div class="session__by">
+          {{ artist.name }} (<a href="#/bio" class="session__artist-name" data-ga-category="overlay" data-ga-action="bio" data-ga-label="{{ artist.slug }}" data-modal-trigger="artist">Profile</a>)
+        </div>
+        <div class="session__speed">
+          <span>Speed:</span>
+          <button class="speed__1x is-active" data-speed="1.0">1x</button>
+          <button class="speed__2x" data-speed="2.0">2x</button>
+          <button class="speed__4x" data-speed="4.0">4x</button>
+          <button class="speed__8x" data-speed="8.0">8x</button>
+        </div>
+      </div>
+      <div class="session__controls">
+        <div class="icon-button session__buttons">
+          <button class="session__play">
+          {% include "img/icons/play.svg" %}
+          </button>
+          <button class="icon-button session__pause">
+            {% include "img/icons/pause.svg" %}
+          </button>
+          <button class="icon-button session__replay">
+            {% include "img/icons/replay.svg" %}
+          </button>
+        </div>
+        <div class="session__timestamp">00:00/00:00</div>
+        <div class="session__progress">
+          <div class="session__progress-bar">
+            <div class="session__progress-line"></div>
+          </div>
+        </div>
+        <div class="session__buttons-right">
+          <button class="icon-button session__fullscreen">
+            {% include "img/icons/fullscreen.svg" %}
+          </button>
+          <button class="icon-button session__fullscreen-exit">
+            {% include "img/icons/fullscreen-exit.svg" %}
+          </button>
+        </div>
+      </div>
+      <div class="session-selector" role="navigation">
+        <div class="session-selector__scroller">
+          {% for s in artist.sessions %}
+            {% if s.enabled %}
+              <a href="/artists/{{ artist.slug }}/sessions/{{ s.slug }}" class="session-selector__item {% if s.slug == session.slug %}session-selector__item--highlighted{% endif %}">
+                <img src="/static/img/artists/{{ artist.slug }}/sessions/{{ s.slug }}.png" alt="{{ s.name }}">
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="viewer__play">
+      {% include "img/icons/play-circle.svg" %}
+    </div>
+    <div class="viewer js-viewer" role="main">
+      <div class="viewer__loading-text">Loading data...</div>
+      <div class="viewer__prompt">
+        <img src="{% static 'img/hand.png' %}" alt="Drag to explore">
+        <span class="drag-text">Drag to explore</span>
+      </div>
+      <div class="canvas-border"></div>
+    </div>
+  </div>
+  {% include "includes/artist-modal.html" %}
+{% endblock %}
+
+{% block js_init %}
+  <script>
+    vart.init('session', {
+      sessionSlug: '{{ session.sketch }}'
+    });
+  </script>
+{% endblock %}

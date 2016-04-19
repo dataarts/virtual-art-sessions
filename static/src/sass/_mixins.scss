@@ -1,0 +1,36 @@
+// Makes the @content apply to the given breakpoint and up.
+@mixin respond-up($name, $media-queries: $breakpoints-map) {
+  @if map-has-key($media-queries, $name) {
+    $min: breakpoint-min($name, $media-queries);
+    @media only screen and (min-width: rem($min)) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: rem($name)) {
+      @content;
+    }
+  }
+}
+
+// Makes the @content apply to the given breakpoint and down.
+@mixin respond-down($name, $media-queries: $breakpoints-map) {
+  @if map-has-key($media-queries, $name) {
+    $max: breakpoint-max($name, $media-queries);
+    @media only screen and (max-width: rem($max)) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: rem($name)) {
+      @content;
+    }
+  }
+}
+
+// Makes the @content apply only to the given breakpoint.
+@mixin respond-only($name, $media-queries: $breakpoints-map) {
+  @include respond-up($name, $media-queries) {
+    @include respond-down($name, $media-queries) {
+      @content;
+    }
+  }
+}

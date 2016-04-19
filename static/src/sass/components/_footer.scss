@@ -1,0 +1,114 @@
+.footer {
+  @include rem(padding, 20px);
+  overflow: hidden;
+}
+
+.footer__logos {
+  @include rem(margin-bottom, 20px);
+  text-align: center;
+
+  @include respond-up(md) {
+    float: left;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    @include rem(padding, 0 20px);
+    display: inline-block;
+
+    &:first-child {
+      border-right: 1px solid $mine-shaft;
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    img {
+      @include rem(max-height, 40px);
+      max-width: 100%;
+      vertical-align: middle;
+
+      @include respond-up(md) {
+        @include rem(max-height, 48px);
+      }
+    }
+
+    @include respond-down(280px) {
+      max-width: 40%;
+    }
+  }
+}
+
+.footer__aside {
+  text-align: center;
+
+  @include respond-up(md) {
+    float: right;
+    text-align: right;
+  }
+}
+
+.footer__social {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    @include rem(padding, 0 10px);
+    display: inline-block;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    img {
+      height: 20px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.footer__links {
+  ul {
+    @include rem(margin, 10px 0 0);
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    @include rem(font-size, 11px);
+    @include rem(padding, 0 10px);
+    border-right: 1px solid $gray;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border: none;
+      padding-right: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

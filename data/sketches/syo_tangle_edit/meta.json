@@ -1,0 +1,14 @@
+{
+  "postprocessing": {
+    "ssao": false,
+    "glow": false
+  },
+  "video": {
+    "source": "videos/syo_tangle/edit_v1b"
+  },
+  "artistSettings": {
+    "blackCutOff": 0.00011,
+    "pointSize": 4.8,
+    "renderStyle": "points"
+	}
+}

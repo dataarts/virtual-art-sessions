@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.DS_Store
+*.py[cod]
+*.swp
+
+.storage
+
+# Distribution / packaging
+.Python
+env/
+build/
+sitepackages/
+
+# Django stuff:
+*.log
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Bower & NPM
+bower_components
+node_modules
+
+# Project Udon specific
+static/dist/
+public/dist/*
+public/framework
+/public/*.html
+/.idea
+scripts/videos/*
+data/sketches/_scripts
+
+# ignore KR sketches
+data/sketches/kr_*
+data/sketches/*_full

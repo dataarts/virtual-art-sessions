@@ -1,0 +1,144 @@
+.artist-modal__info {
+  @include rem(padding, 0 20px);
+  position: relative;
+  text-align: center;
+}
+
+.artist-modal__info__avatar {
+  @include rem(height, 100px);
+  @include rem(margin-bottom, 20px);
+  @include rem(width, 100px);
+  background: $white;
+  border: 2px solid $white;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.artist-modal__info__name {
+  @include rem(margin-bottom, 15px);
+}
+
+.artist-modal__info__bio {
+  @include rem(margin-bottom, 40px);
+  color: $gray;
+}
+
+.artist-modal__sessions {
+  @include rem(margin-bottom, 40px);
+  @include rem(padding, 40px);
+  background: $cod-gray;
+  border: solid $mine-shaft;
+  border-width: 1px 0;
+  text-align: center;
+
+  @include respond-up(1100px) {
+    border-width: 1px;
+  }
+
+  ul {
+    @include rem(margin, 0 0 -25px -40px);
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.artist-modal__session {
+  @include rem(padding, 0 0 25px 40px);
+  display: inline-block;
+  width: 100%;
+
+  @include respond-up(md) {
+    width: 50%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    @include rem(margin-bottom, 10px);
+    border: 2px solid $white;
+    display: block;
+    font-size: 0;
+    position: relative;
+    transition: border 0.15s;
+
+    &:before,
+    &:after {
+      transition: opacity 0.15s;
+    }
+
+    &:before {
+      background: rgba(0, 0, 0, 0.7);
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &:after {
+      @include rem(font-size, 42px);
+      @include rem(height, 80px);
+      @include rem(line-height, 80px);
+      @include rem(padding-left, 90px);
+      background: url('/static/img/icons/play-circle-orange.svg') no-repeat left center / rem(80px);
+      content: 'View in 360\00B0';
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+
+    &:hover {
+      border-color: $burning-orange;
+    }
+
+    &:hover:before,
+    &:hover:after {
+      @include respond-up(md) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.artist-modal__sessions__heading {
+  @include rem(margin-bottom, 30px);
+  color: $burning-orange;
+
+  @include respond-up(md) {
+    @include rem(margin-bottom, 40px);
+  }
+}
+
+.artist-modal__profile {
+  @include rem(margin-bottom, 40px);
+  text-align: center;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.artist-modal__profile-item {
+  display: block;
+  width: 100%;
+
+  img {
+    pointer-events: none;
+    width: 100%;
+  }
+}
+
+.artist-modal__profile-video {
+  @include rem(margin-bottom, 40px);
+  display: block;
+  width: 100%;
+}

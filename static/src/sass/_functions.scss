@@ -1,0 +1,14 @@
+@function breakpoint-next($name, $media-queries: $breakpoints-map, $breakpoint-names: map-keys($media-queries)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $media-queries: $breakpoints-map) {
+  $min: map-get($media-queries, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $media-queries: $breakpoints-map) {
+  $next: breakpoint-next($name, $media-queries);
+  @return if($next, breakpoint-min($next, $media-queries) - 1px, null);
+}

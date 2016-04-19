@@ -1,0 +1,76 @@
+.header {
+  @include rem(padding, 10px 75px 10px 75px);
+  @include rem(min-height, 72px);
+  @include rem(min-width, $site-min-width);
+  align-items: center;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  @include respond-up(md) {
+    @include rem(min-height, 80px);
+  }
+
+  :fullscreen & {
+    display: none;
+  }
+}
+
+.header__icon {
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 1));
+}
+
+.header__back,
+.header__share {
+  position: absolute;
+}
+
+.header__back {
+  @include rem(left, 10px);
+  @include rem(top, 16px);
+
+  @include respond-up(sm) {
+    @include rem(left, 20px);
+    @include rem(top, 20px);
+  }
+}
+
+.header__heading {
+  @include rem(font-size, 15px);
+  font-family: 'trajan-pro-3', Georgia, 'Times New Roman', serif;
+  letter-spacing: 5px;
+  text-align: center;
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+  }
+
+  @include respond-up(sm) {
+    @include rem(font-size, 3.8vw);
+  }
+
+  @include respond-up(md) {
+    @include rem(font-size, 32px);
+  }
+}
+
+.header__share {
+  @include rem(right, 10px);
+  @include rem(top, 16px);
+
+  @include respond-up(sm) {
+    @include rem(right, 20px);
+    @include rem(top, 20px);
+  }
+
+  img {
+    height: 28px;
+    width: 28px;
+  }
+}

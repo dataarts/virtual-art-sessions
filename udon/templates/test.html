@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Art Sessions</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width,
+      initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5" charset="UTF-16" />
+  <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/test.min.css' %}">
+</head>
+<body>
+  <script id="analytics" data-analytics-id="{{ ANALYTICS_KEY }}" data-mode="{% if DEBUG %}debug{% else %}prod{% endif %}" src="{% static 'js/ga.js' %}"></script>
+  <script src="{% static 'js/vart.js' %}"></script>
+  <script src="{% static 'js/third_party/dat.gui.min.js' %}"></script>
+  <script src="{% static 'js/third_party/modernizr-custom.js' %}"></script>
+  <div class="viewer js-viewer"></div>
+  <div id="edit_ui"><div id="edit_timeline"></div></div>
+  <script>
+    vart.init('test');
+  </script>
+</body>
+</html>

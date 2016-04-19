@@ -1,0 +1,22 @@
+%icon-control {
+  $mobile-size: 24px;
+  $size: 32px;
+
+  @extend %ui-control;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    @include rem(height, $mobile-size);
+    @include rem(width, $mobile-size);
+  }
+
+  @include respond-up(md) {
+    svg {
+      @include rem(height, $size);
+      @include rem(width, $size);
+    }
+  }
+}

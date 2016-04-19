@@ -1,0 +1,83 @@
+.tech-modal {
+  @include rem(padding-bottom, 50px);
+  @include rem(padding-top, 50px);
+  background: $black;
+  color: $nobel;
+
+  .container {
+    @include rem(max-width, 800px);
+  }
+}
+
+.tech-modal__heading {
+  @include rem(font-size, 16px);
+  @include rem(margin-bottom, 20px);
+  color: $white;
+  display: block;
+  font-family: 'trajan-pro-3', Georgia, 'Times New Roman', serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  @include respond-up(md) {
+    @include rem(margin-bottom, 50px);
+    @include rem(font-size, 18px);
+    display: inline-block;
+  }
+}
+
+.tech-modal__code-button {
+  @include rem(padding, 12px 20px);
+  background: $white;
+  color: $black;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.15s;
+
+  &:hover {
+    background: $nobel;
+  }
+}
+
+.tech-modal__video {
+  @include rem(margin-bottom, 40px);
+}
+
+.tech-modal__separator {
+  @include rem(margin, 0 20px 50px);
+  color: $white;
+  display: none;
+
+  @include respond-up(md) {
+    display: inline-block;
+  }
+}
+
+.tech-modal__sub-heading {
+  @include rem(font-size, 20px);
+  @include rem(margin-bottom, 20px);
+  color: $white;
+  display: block;
+
+  @include respond-up(md) {
+    @include rem(margin-bottom, 50px);
+    display: inline-block;
+  }
+}
+
+.tech-modal__summary {
+  @include rem(margin-bottom, 30px);
+  border-bottom: 1px solid $gray;
+}
+
+.tech-modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include rem(margin-bottom, 30px);
+  }
+}

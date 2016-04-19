@@ -1,0 +1,34 @@
+$break-sm-max: 480px;
+$break-md-min: $break-sm-max + 1;
+$break-md-max: 768px;
+$break-lg-min: $break-md-max + 1;
+$break-lg-max: 1024px;
+$break-xlg-min: $break-lg-max + 1;
+$break-xlg-max: 1280px;
+
+// Breakpoints map for responsive helper mixins
+$breakpoints-map: (
+  sm: $break-sm-max,
+  md: $break-md-max,
+  lg: $break-lg-max,
+  xlg: $break-xlg-max
+) !default;
+
+// CSS Wizardry Grids config
+$breakpoints: (
+  'sm' '(max-width: ' + $break-sm-max + ')',
+  'md' '(min-width: ' + $break-md-min + ') and (max-width: ' + $break-md-max + ')',
+  'lg' '(min-width: ' + $break-lg-min + ') and (max-width: ' + $break-lg-max + ')',
+  'xlg' '(min-width: ' + $break-xlg-min + ')'
+) !default;
+
+$breakpoint-has-widths: ('sm', 'md', 'lg', 'xlg');
+$breakpoint-has-push:   ('sm', 'md', 'lg', 'xlg');
+$breakpoint-has-pull:   ('sm', 'md', 'lg', 'xlg');
+
+$push: false;
+$pull: false;
+$gutter: 20px;
+
+// Sass-Rem
+$rem-baseline: 16px;

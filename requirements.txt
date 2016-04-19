@@ -1,0 +1,15 @@
+git+https://github.com/potatolondon/djangae.git#egg=djangae
+django>=1.7,<1.9
+django-secure
+django-csp
+git+https://github.com/adamalton/django-csp-reports.git#egg=cspreports
+django-session-csrf
+nose
+six
+
+# Uncomment these to use mapreduce or djangae.contrib.uniquetool (which uses mapreduce)
+# These are forks of Google's libraries, which contain various fixes and patches
+#git+https://github.com/potatolondon/appengine-pipelines.git
+#git+https://github.com/potatolondon/potato-mapreduce.git#egg=mapreduce
+
+GoogleAppEngineCloudStorageClient

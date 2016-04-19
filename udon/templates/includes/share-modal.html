@@ -1,0 +1,9 @@
+{% load staticfiles %}
+<div class="modal share-modal" data-modal="share">
+  {% include "includes/social.html" with message=social_share_description %}
+  <div class="modal__close">
+    <button class="icon-button" arai-label="Close" data-modal-close>
+      {% include "img/icons/close.svg" %}
+    </button>
+  </div>
+</div>

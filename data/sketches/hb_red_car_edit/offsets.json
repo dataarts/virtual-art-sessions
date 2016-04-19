@@ -1,0 +1,30 @@
+{
+  "positionA": {
+    "x": -30.89,
+    "y": 2.94,
+    "z": 36.76,
+    "pitch": 1.5,
+    "yaw": 2.54,
+    "roll": 0.97
+  },
+  "positionB": {
+    "x": -7.73,
+    "y": 10,
+    "z": -71.33,
+    "pitch": -0.74,
+    "yaw": -4.41,
+    "roll": 1.96
+  },
+  "positionBoth": {
+    "x": 23.52,
+    "y": 90.99,
+    "z": -20.59,
+    "pitch": 1.25,
+    "yaw": -104.56,
+    "roll": -1.62
+  },
+  "cameraTargetHeight": 150,
+  "positionGround": -15,
+  "playhead": 0.20025965983962715,
+  "time": -0.7206620794314453
+}

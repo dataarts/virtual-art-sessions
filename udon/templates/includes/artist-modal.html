@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<div class="modal artist-modal" data-modal="artist">
+  <div class="modal__close">
+    <button class="icon-button" aria-label="Close" data-modal-close>
+      {% include "img/icons/close.svg" %}
+    </button>
+  </div>
+  <div class="container">
+    <div class="artist-modal__info">
+      <img class="artist-modal__info__avatar" src="/static/img/artists/{{ artist.slug }}/avatar.jpg" alt="{{ artist.name }}">
+      <div class="artist-modal__info__name">
+        {{ artist.name }}
+      </div>
+      <div class="artist-modal__info__bio">
+        {{ artist.bio }}
+      </div>
+    </div>
+    <div class="artist-modal__profile">
+      {% if artist.video_id %}
+        <div class="artist-modal__profile-video ratio ratio--16-9">
+          <div data-video-id="{{ artist.video_id }}"></div>
+        </div>
+      {% endif %}
+      <a href="{{ artist.page }}" target="blank">
+        {% if artist.name|slice:"-1:" == "s" %}
+          Visit {{ artist.name }}’ website
+        {% else %}
+          Visit {{ artist.name }}’s website
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</div>
