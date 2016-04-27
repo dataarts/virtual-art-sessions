@@ -82,3 +82,12 @@ a {
   @include rem(max-width, 1100px);
   margin: 0 auto;
 }
+
+.serif-font {
+  font-family: 'trajan-pro-3', Georgia, 'Times New Roman', serif;
+  visibility: hidden;
+
+  .wf-active & {
+    visibility: visible;
+  }
+}

@@ -144,6 +144,7 @@ CSP_STYLE_SRC = (
     "https://fonts.googleapis.com",
     "https://*.gstatic.com",
     "use.typekit.net",
+    "https://use.typekit.net",
 )
 CSP_FONT_SRC = (
     "'self'",
@@ -169,6 +170,7 @@ CSP_SCRIPT_SRC = (
     "ajax.googleapis.com",
     "*.gstatic.com",
     "use.typekit.net",
+    "https://use.typekit.net",
 )
 CSP_IMG_SRC = (
     "'self'",
@@ -178,6 +180,7 @@ CSP_IMG_SRC = (
     "*.googleusercontent.com",
     "*.gstatic.com",
     "p.typekit.net",
+    "https://p.typekit.net",
 )
 CSP_CONNECT_SRC = (
     "'self'",

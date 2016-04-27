@@ -68,3 +68,8 @@ prefix=
  - access any view that requires a video and wait for a bit so the video can get uploaded to the local GCS
 
 Note: the delay happens only when you're accessing the video for the first time.
+
+## Code Credits
+- Data collection and wrangling - @dataarts
+- WebGL viewer - @mflux 
+- Site build and Python server - @potatolondon 

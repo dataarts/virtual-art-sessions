@@ -211,7 +211,7 @@ function bindPlayerCallbacks_() {
   sketchPlayer.events.onPlaybackComplete.add(onPlaybackComplete_);
   sketchPlayer.events.onBeginPlay.add(onBeginPlay_);
   sketchPlayer.events.onEndPlay.add(onEndPlay_);
-  progressBar.events.onSeekUpdate.add(setTimestamp_);
+  progressBar.events.onSeekUpdate.add(onSeekUpdate_);
   progressBar.events.onSeekEnd.add(onSeekEnd_);
 }
 
@@ -322,10 +322,16 @@ function onEndPlay_() {
   $root.removeClass(CLASSES.PLAYING);
 }
 
+function onSeekUpdate_() {
+  if (!sketchPlayer.sketch.isFinished()) {
+    $root.removeClass(CLASSES.FINISHED);
+  }
+
+  setTimestamp_();
+}
+
 function onSeekEnd_() {
   logger.info('session:onSeekEnd_');
-  $root.addClass(CLASSES.PAUSED);
-  $root.removeClass(CLASSES.PAUSED + ' ' + CLASSES.FINISHED);
   setTimestamp_();
 }
 

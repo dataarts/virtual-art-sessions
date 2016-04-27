@@ -1,10 +1,10 @@
 {% load staticfiles %}
 <ul>
   <li>
-    <a class="social__link" data-ga-category="share" data-ga-action="google-plus" data-ga-label="{{ ga_label }}" href="https://plus.google.com/share?url={{ SHORT_URL|urlencode }}" target="_blank"><img src="{% static 'img/icons/google-plus.svg' %}" alt="Google Plus"></a>
+    <a class="social__link" data-ga-category="share" data-ga-action="google-plus" data-ga-label="{{ ga_label }}" href="https://plus.google.com/share?url={{ sharing_url|default:SHORT_URL|urlencode }}" target="_blank"><img src="{% static 'img/icons/google-plus.svg' %}" alt="Google Plus"></a>
   </li>
   <li>
-    <a class="social__link" data-ga-category="share" data-ga-action="facebook" data-ga-label="{{ ga_label }}" href="http://www.facebook.com/sharer.php?u={{ SHORT_URL|urlencode }}" target="_blank"><img src="{% static 'img/icons/facebook.svg' %}" alt="Facebook"></a>
+    <a class="social__link" data-ga-category="share" data-ga-action="facebook" data-ga-label="{{ ga_label }}" href="http://www.facebook.com/sharer.php?u={{ sharing_url|default:SHORT_URL|urlencode }}" target="_blank"><img src="{% static 'img/icons/facebook.svg' %}" alt="Facebook"></a>
   </li>
   <li>
     <a class="social__link" data-ga-category="share" data-ga-action="twitter" data-ga-label="{{ ga_label }}" href="https://twitter.com/intent/tweet?text={{ message|urlencode }}" target="_blank"><img src="{% static 'img/icons/twitter.svg' %}" alt="Twitter"></a>

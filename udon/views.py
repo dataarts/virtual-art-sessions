@@ -81,6 +81,7 @@ def session(request, artist_slug, session_slug=None):
         'artist': artist,
         'next': utils.get_next_artist(artist_slug),
         'session': session,
+        'sharing_url': utils.get_full_path(request.path)
     }
     return render(request, 'session.html', context)
 

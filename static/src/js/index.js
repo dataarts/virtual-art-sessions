@@ -20,7 +20,6 @@ import autotrack from './components/autotrack';
 import focusmanager from './components/focusmanager';
 import * as social from './components/social';
 import * as modals from './components/modals';
-import * as typekit from './components/typekit';
 
 import * as home from './pages/home';
 import * as logger from './utils/logger';
@@ -30,8 +29,7 @@ import * as test from './pages/test';
 const components = {
   autotrack,
   modals,
-  social,
-  typekit
+  social
 };
 
 const pages = {

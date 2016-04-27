@@ -72,6 +72,7 @@ function getUrlParam( name, url ) {
 export function create( settings, frameLoop ) {
 
   const videoState = {
+    finished: false,
     playing: false
   };
 
@@ -170,6 +171,7 @@ export function create( settings, frameLoop ) {
       }, false);
 
       videoElement.addEventListener('ended', function(e){
+        videoState.finished = true;
         if( onEndFn ){
           onEndFn();
         }
@@ -178,6 +180,17 @@ export function create( settings, frameLoop ) {
       videoElement.addEventListener('play', function(e){
         if ( onPlayFn ) {
           onPlayFn();
+        }
+      });
+
+      frameLoop.add(function() {
+        var progress = Math.round(getPercentage() * 1000) / 1000;
+        if (progress === 1.0 && videoState.playing) {
+          videoState.playing = false;
+          videoState.finished = true;
+          if (onEndFn) {
+            onEndFn();
+          }
         }
       });
 
@@ -201,7 +214,8 @@ export function create( settings, frameLoop ) {
             onEnd,
             onPlay,
             setPlaybackRate,
-            isPlaying
+            isPlaying,
+            isFinished
           }
         );
 
@@ -233,6 +247,11 @@ export function create( settings, frameLoop ) {
     var curTime = videoElement.currentTime.toFixed(3);
     if (pos != curTime){
       videoElement.currentTime = pos;
+    }
+
+    var progress = Math.round(getPercentage() * 1000) / 1000;
+    if (progress < 1) {
+      videoState.finished = false;
     }
   }
 
@@ -281,14 +300,18 @@ export function create( settings, frameLoop ) {
       }
     }
 
+    videoState.finished = false;
     videoState.playing = playing;
+  }
+
+  function isFinished() {
+    return videoState.finished;
   }
 
   function setPlaybackRate(rate) {
     videoElement.playbackRate = rate;
   }
   function getElement(){
-    // return videoElement;
     return settings.paintToCanvas ? videoCanvas.canvas : videoElement;
   }
 
@@ -301,12 +324,10 @@ export function create( settings, frameLoop ) {
 
   function onEnd( fn ){
     onEndFn = fn;
-    videoState.playing = false;
   }
 
   function onPlay( fn ){
     onPlayFn = fn;
-    videoState.playing = true;
   }
 
   function isPlaying(){

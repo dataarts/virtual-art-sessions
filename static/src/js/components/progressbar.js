@@ -83,7 +83,7 @@ class SketchProgressBar {
     this.sketchPlayer.seek(ui.value);
     this.events.onSeekEnd.emit();
 
-    if (this.wasPlaying_) {
+    if (this.wasPlaying_ && !this.sketchPlayer.sketch.isFinished()) {
       this.sketchPlayer.play();
     }
 

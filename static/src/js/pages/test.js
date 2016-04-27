@@ -161,12 +161,12 @@ var sketches_w_artist = [
   'syo_tangle_edit',
 ]
 
+var currentSketchName = '';
 
 /**
  * Initialize components on the page.
  */
 function init() {
-  initLoaderGui();
 
   timelineGUI = createTimelineGUI()
 
@@ -186,16 +186,17 @@ function init() {
     console.log('playing stopped');
   });
 
-  var sketchName = getUrlParam( 'sketch', window.location.href );
+  currentSketchName = getUrlParam( 'sketch', window.location.href );
 
-  if( sketchName !== null ){
-    loadAndTest( sketchName );
-  }
-  else{
-    console.warn( 'use: test.html?sketch=gazebo' );
-    loadAndTest( 'syo_yellow_nest' );
+  if( currentSketchName == null ){
+    console.warn( 'use: test/?sketch=syo_yellow_nest' );
+    currentSketchName = 'syo_yellow_nest';
 
   }
+  loadAndTest( currentSketchName );
+
+
+  initLoaderGui();
 
   $('.js-viewer').append(player.domElement());
 }
@@ -204,8 +205,8 @@ function init() {
 function initLoaderGui() {
   var loaderGUI = new dat.GUI( );
   loaderGUI.domElement.id = 'loadergui';
-  loaderGUI.add( { sketch: '' }, 'sketch', sketches ).onFinishChange( sketchSelected);
-  loaderGUI.add( { sketch_w_artist: '' }, 'sketch_w_artist', sketches_w_artist ).onFinishChange( sketchSelected);
+  loaderGUI.add( { sketch: currentSketchName }, 'sketch', sketches ).onFinishChange( sketchSelected);
+  loaderGUI.add( { sketch_w_artist: currentSketchName }, 'sketch_w_artist', sketches_w_artist ).onFinishChange( sketchSelected);
 }
 
 function sketchSelected( val ) {
@@ -341,6 +342,13 @@ function loadAndTest( sketchName ){
       guiRender.add( artistUniforms, 'pointSize').min(0).max(8).onChange( onUniformsChanged );
     }
 
+
+    function updateUI(){
+      timelineGUI.updateUI();
+      window.requestAnimationFrame(updateUI);
+    }
+    window.requestAnimationFrame(updateUI);
+
     if( offsets ) {
       artistGui.add( { saveOffsets: function(){
 
@@ -378,11 +386,6 @@ function loadAndTest( sketchName ){
     player.showStats();
     player.enablePanning();
 
-    function updateUI(){
-      timelineGUI.updateUI();
-      window.requestAnimationFrame(updateUI);
-    }
-    window.requestAnimationFrame(updateUI);
 
     window.addEventListener('keydown', function onKeyDown(ev){
       console.log(ev.keyCode)
@@ -755,17 +758,19 @@ function createTimelineGUI(  ){
           ui_ctx.fillRect(startX,0,widthX,barH);
           ui_ctx.fillText((parseInt(i) + 1) + ": "+ duration.toFixed(1) + "s",startX,18);
         }
+
       }
 
-
       if ( sketch.isEditPlayback()) {
-
         ui_ctx.fillStyle="#885";
       } else {
         ui_ctx.fillStyle="#888";
       }
       ui_ctx.fillText("time: " + sketch.getCurrentTime().toFixed(1) + "s",0,32);
-      ui_ctx.fillText("total edit: " + totalTime.toFixed(1) + "s",0,48);
+
+      if (editing)
+        ui_ctx.fillText("total edit: " + totalTime.toFixed(1) + "s",0,48);
+
 
 
       // playHead

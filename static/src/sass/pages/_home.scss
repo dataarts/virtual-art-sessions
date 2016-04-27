@@ -28,7 +28,6 @@
 .home__header__heading {
   @include rem(font-size, 16px);
   @include rem(margin-bottom, 10px);
-  font-family: 'trajan-pro-3', Georgia, 'Times New Roman', serif;
   letter-spacing: 4px;
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);

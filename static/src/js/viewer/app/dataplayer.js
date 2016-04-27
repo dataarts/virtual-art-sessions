@@ -89,8 +89,13 @@ export function create( start, end, offsets ){
     return playing;
   }
 
+  function isFinished(){
+    var progress = Math.round(getPercentage() * 1000) / 1000;
+    return progress >= 1.0;
+  }
+
   return {
-    play, pause, restart, isPlaying,
+    play, pause, restart, isPlaying, isFinished,
     currentTime, totalTime,
     seekToRatio, seek, update,
     getPercentage, bindEvents, getDuration, getTimeAtRatio

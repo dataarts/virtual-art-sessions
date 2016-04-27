@@ -293,16 +293,6 @@ function createPlayer( {
         update( videoController.getPercentage() );
         dataPlayer.update( videoController.getCurrentTime() );
         offsets.playhead = Math.min( dataPlayer.getPercentage(), 1.0 );
-
-        if (!endCalled && videoController.getPercentage() === 1.0) {
-
-          if (isPlaying()) {
-            endCalled = true;
-            events.playbackComplete.emit();
-          }
-        } else if (videoController.getPercentage() < 1) {
-          endCalled = false;
-        }
       });
 
       videoController.onPlay( function(){
@@ -459,6 +449,15 @@ function createPlayer( {
       }
     }
 
+    function isFinished(){
+      if( videoController ){
+        return videoController.isFinished();
+      }
+      else{
+        return dataPlayer.isFinished();
+      }
+    }
+
     function debugVideo(){
       if( videoController ){
         videoController.debugVideo();
@@ -537,7 +536,7 @@ function createPlayer( {
     resolve( { play, pause, rewind, seek,
       setPOV, togglePOV,
       progress, offsets, artistSettings, debugVideo,
-      videoDuration, dataDuration, getCurrentTime, isPlaying,
+      videoDuration, dataDuration, getCurrentTime, isPlaying, isFinished,
       getVideoTimeAtRatio, getRatioAtVideoTime, getDataTimeAtRatio, orbit,
       updateArtistUniforms, setInputVisibilty, setThumbnailVisibilty,
       skip, path, playbackMeta, setPlaybackRate,
